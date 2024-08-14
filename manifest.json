@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Twitter Image/Video Hider",
+  "version": "1.0",
+  "description": "特定のユーザーの画像・動画を含むツイートを非表示にします。",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://twitter.com/*", "https://x.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
